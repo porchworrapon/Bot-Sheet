@@ -1,9 +1,11 @@
 const express = require('express');
 const app = express();
-const port = 3000
+const port = process.env.PORT || 3000;
+app.set('view engine', 'js');
+app.get('/fbActions', (req, res) => {res.render('fbActions.js')});
+app.get('/getSheetData', (req, res) => {res.render('getSheetData.js')});
 
-app.get('/', (req, res) => res.send('Hello World!'))
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => {console.log(`App listening on port ${port}`)})
 
 const puppeteer = require("puppeteer");
 const dotenv = require("dotenv");
