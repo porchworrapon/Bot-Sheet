@@ -27,7 +27,7 @@ async function run() {
 
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
-
+  await page.goto('https://bot-sheet.onrender.com');
   try {
     const EMAIL = process.env.EMAIL || "";
     const PASSWORD = process.env.PASSWORD || "";
